@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="app">
+        <header class="header">
+            <h1>My Portfolio</h1>
+            <p class="subtitle">Claude Code와 함께 만든 프로젝트들</p>
+        </header>
+
+        <section class="projects">
+            <a href="./my-todoo-app/index.html" class="project-card todo">
+                <div class="card-icon">✓</div>
+                <h2>Todo App</h2>
+                <p class="card-description">할 일을 추가하고 관리하는 앱</p>
+                <ul class="card-features">
+                    <li>할 일 추가/삭제</li>
+                    <li>완료 표시</li>
+                    <li>LocalStorage 저장</li>
+                </ul>
+                <span class="card-tech">HTML · CSS · JavaScript</span>
+            </a>
+
+            <a href="./fx-converter/index.html" class="project-card fx">
+                <div class="card-icon">💱</div>
+                <h2>환율 변환기</h2>
+                <p class="card-description">실시간 환율로 금액을 변환하는 앱</p>
+                <ul class="card-features">
+                    <li>실시간 환율 조회</li>
+                    <li>다양한 통화 지원</li>
+                    <li>API 연동</li>
+                </ul>
+                <span class="card-tech">HTML · CSS · JavaScript · API</span>
+            </a>
+
+            <a href="./snake-game/index.html" class="project-card snake">
+                <div class="card-icon">🐍</div>
+                <h2>스네이크 게임</h2>
+                <p class="card-description">클래식 스네이크 게임</p>
+                <ul class="card-features">
+                    <li>키보드 조작</li>
+                    <li>난이도 선택</li>
+                    <li>최고 점수 저장</li>
+                </ul>
+                <span class="card-tech">HTML · CSS · JavaScript · Canvas</span>
+            </a>
+        </section>
+
+        <footer class="footer">
+            <p>Made with Claude Code</p>
+        </footer>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

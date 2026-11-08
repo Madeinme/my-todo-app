@@ -1,0 +1,234 @@
+/* 모든 요소의 크기 계산에 테두리와 안쪽 여백을 포함 */
+* {
+    box-sizing: border-box;
+}
+
+/* 페이지 전체: 보라색 그라데이션 배경, 카드를 화면 정중앙에 배치 */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: "Pretendard", "Segoe UI", "Malgun Gothic", sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* 흰색 카드: 큰 둥근 모서리와 부드럽게 퍼지는 그림자 */
+.card {
+    width: 100%;
+    max-width: 464px;
+    padding: 32px;
+    text-align: center;
+    background: #fff;
+    border-radius: 28px;
+    box-shadow:
+        0 20px 50px rgba(40, 20, 80, 0.30),
+        0 4px 12px rgba(40, 20, 80, 0.15);
+}
+
+/* 카드 제목: 작은 대문자 느낌의 라벨 */
+.title {
+    margin: 0 0 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #9a9ab0;
+}
+
+/* 점수판: 두 칸을 가로로 나란히 */
+.scoreboard {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.score-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px;
+    background: #f5f4fc;
+    border-radius: 16px;
+}
+
+.score-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #9a9ab0;
+}
+
+/* 점수 숫자: 자릿수가 바뀌어도 폭이 흔들리지 않도록 고정폭 숫자 사용 */
+.score-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #667eea;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 레벨이 오를 때 숫자가 톡 튀어 오르는 효과 */
+.score-value.level-up {
+    animation: level-up 0.6s ease-out;
+}
+
+@keyframes level-up {
+    0%   { transform: scale(1);   color: #667eea; }
+    40%  { transform: scale(1.5); color: #f39c12; }
+    100% { transform: scale(1);   color: #667eea; }
+}
+
+/* 조작 영역: 난이도 선택과 일시정지 버튼을 양쪽 끝에 배치 */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.difficulty {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#difficulty {
+    height: 40px;
+    padding: 0 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4a4a68;
+    background: #f5f4fc;
+    border: 2px solid #e3e0f7;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#difficulty:focus-visible {
+    outline: 3px solid #764ba2;
+    outline-offset: 2px;
+}
+
+/* 게임 중에는 난이도를 바꿀 수 없음을 흐리게 표시 */
+#difficulty:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 캔버스와 오버레이를 겹치기 위한 기준 상자 */
+.board {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* 캔버스: 내부 해상도는 400x400 그대로, 좁은 화면에서는 비율 유지하며 축소 */
+#game {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #1e1b2e;
+}
+
+/* 시작/게임 오버 안내: 캔버스 전체를 반투명하게 덮음 */
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: rgba(30, 27, 46, 0.82);
+    color: #fff;
+}
+
+/* hidden 속성이 display:flex에 덮이지 않도록 명시 */
+.overlay[hidden] {
+    display: none;
+}
+
+.overlay-title {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.overlay-text {
+    margin: 0 0 16px;
+    font-size: 1rem;
+    color: #d6d3f0;
+}
+
+/* 버튼: 보라색 그라데이션의 알약(pill) 모양 */
+.btn {
+    height: 52px;
+    padding: 0 32px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.45);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+/* 마우스를 올리면 살짝 떠오르고 그림자가 커짐 */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(102, 126, 234, 0.55);
+}
+
+/* 누르는 순간 다시 내려앉음 */
+.btn:active {
+    transform: translateY(0) scale(0.97);
+}
+
+/* 키보드(Tab)로 이동했을 때 위치가 보이도록 테두리 표시 */
+.btn:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
+/* 일시정지 버튼: 작은 연회색 pill */
+.btn-sub {
+    height: 40px;
+    min-width: 104px;
+    padding: 0 20px;
+    font-size: 0.95rem;
+    color: #5a5a72;
+    background: #f1f1f6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-sub:hover {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
+}
+
+.btn-sub:focus-visible {
+    outline: 3px solid #764ba2;
+}
+
+/* 게임 중이 아닐 때는 비활성화 */
+.btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* 조작 안내 문구 */
+.help {
+    margin: 16px 0 0;
+    font-size: 0.85rem;
+    color: #9a9ab0;
+}

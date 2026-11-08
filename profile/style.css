@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+}
+
+.card {
+    width: 100%;
+    max-width: 360px;
+    padding: 40px 32px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.avatar {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    background: #eef0fd;
+    border: 4px solid #667eea;
+    border-radius: 50%;
+}
+
+.name {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.job {
+    font-size: 15px;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+.hobbies {
+    padding-top: 24px;
+    border-top: 1px solid #eee;
+}
+
+.hobbies h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.hobbies ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.hobbies li {
+    padding: 6px 14px;
+    font-size: 14px;
+    color: #667eea;
+    background: #eef0fd;
+    border-radius: 999px;
+}

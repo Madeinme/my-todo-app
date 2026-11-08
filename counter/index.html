@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 한글이 깨지지 않도록 UTF-8 인코딩 사용 -->
+    <meta charset="UTF-8">
+    <!-- 모바일 화면 너비에 맞춰 표시 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 브라우저 탭에 표시되는 제목 -->
+    <title>카운터</title>
+    <!-- 디자인을 담당하는 CSS 파일 연결 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 화면 가운데에 놓이는 카운터 카드 -->
+    <main class="card">
+        <h1 class="title">카운터</h1>
+
+        <!-- 현재 숫자. aria-live 덕분에 값이 바뀌면 스크린리더가 읽어 줌 -->
+        <p id="count" class="count" aria-live="polite">0</p>
+
+        <!-- 버튼 모음 -->
+        <div class="buttons">
+            <button id="decrease" class="btn" type="button" aria-label="1 감소">−</button>
+            <button id="reset" class="btn btn-reset" type="button">리셋</button>
+            <button id="increase" class="btn" type="button" aria-label="1 증가">+</button>
+        </div>
+    </main>
+
+    <!-- 동작을 담당하는 파일. 페이지 내용을 다 읽은 뒤 불러오도록 body 맨 끝에 둠 -->
+    <script src="main.js"></script>
+</body>
+</html>

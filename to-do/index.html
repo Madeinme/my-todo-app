@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 할 일 목록</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="card">
+        <!-- 제목 -->
+        <h1 class="title">나의 할 일 목록</h1>
+
+        <!-- 입력창과 추가 버튼 -->
+        <form class="todo-form" id="todo-form">
+            <input
+                type="text"
+                id="todo-input"
+                class="todo-input"
+                placeholder="할 일을 입력하세요"
+                autocomplete="off"
+            >
+            <button type="submit" id="add-btn" class="add-btn">추가</button>
+        </form>
+
+        <!-- 할 일 개수 표시 -->
+        <p class="todo-count">
+            전체 <strong id="total-count">0</strong>개 · 완료 <strong id="done-count">0</strong>개
+        </p>
+
+        <!-- 필터 버튼 (data-filter 값으로 어떤 항목을 보여줄지 구분) -->
+        <div class="filters" id="filters">
+            <button type="button" class="filter-btn active" data-filter="all">전체</button>
+            <button type="button" class="filter-btn" data-filter="active">진행중</button>
+            <button type="button" class="filter-btn" data-filter="done">완료</button>
+        </div>
+
+        <!-- 할 일 목록 영역 -->
+        <ul class="todo-list" id="todo-list"></ul>
+
+        <!-- 목록이 비어 있을 때 보이는 안내 문구 (문구와 표시 여부는 JS가 정함) -->
+        <p class="empty-message" id="empty-message" hidden></p>
+
+        <!-- 완료 항목 일괄 삭제 버튼 -->
+        <button type="button" class="clear-done-btn" id="clear-done-btn">완료된 항목 삭제</button>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

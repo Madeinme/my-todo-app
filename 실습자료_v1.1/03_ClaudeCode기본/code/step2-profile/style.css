@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    max-width: 320px;
+    width: 90%;
+}
+
+.avatar {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.name {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.job {
+    color: #667eea;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.hobbies h2 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.hobbies ul {
+    list-style: none;
+}
+
+.hobbies li {
+    color: #666;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.hobbies li:last-child {
+    border-bottom: none;
+}

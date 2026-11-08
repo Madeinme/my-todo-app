@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐍 Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="app">
+        <header class="header">
+            <h1>🐍 Snake Game</h1>
+            <p class="subtitle">방향키로 뱀을 조종하세요!</p>
+        </header>
+
+        <!-- 게임 정보 -->
+        <div class="game-info">
+            <div class="info-item">
+                <span class="info-label">점수</span>
+                <span id="score" class="info-value">0</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">최고 점수</span>
+                <span id="highScore" class="info-value">0</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">레벨</span>
+                <span id="level" class="info-value">1</span>
+            </div>
+        </div>
+
+        <!-- 게임 캔버스 -->
+        <div class="game-container">
+            <canvas id="gameCanvas"></canvas>
+
+            <!-- 게임 오버 화면 -->
+            <div id="gameOver" class="game-over hidden">
+                <h2>Game Over!</h2>
+                <p>최종 점수: <span id="finalScore">0</span></p>
+                <button id="restartBtn" class="btn btn-primary">다시 시작</button>
+            </div>
+
+            <!-- 시작 화면 -->
+            <div id="startScreen" class="start-screen">
+                <h2>🐍 Snake Game</h2>
+                <p>방향키로 뱀을 조종하여 먹이를 먹으세요!</p>
+                <div class="controls-guide">
+                    <p>⬆️ ⬇️ ⬅️ ➡️ 방향키로 이동</p>
+                    <p>🍎 빨간 사과 = +10점</p>
+                    <p>🍏 초록 사과 = +20점 (보너스)</p>
+                    <p>💀 벽이나 자기 몸에 부딪히면 게임 오버</p>
+                </div>
+                <button id="startBtn" class="btn btn-primary">게임 시작</button>
+            </div>
+        </div>
+
+        <!-- 게임 컨트롤 -->
+        <div class="game-controls">
+            <button id="playPauseBtn" class="btn">⏸️ 일시정지</button>
+            <select id="difficulty" class="difficulty-select">
+                <option value="200">쉬움</option>
+                <option value="150" selected>보통</option>
+                <option value="100">어려움</option>
+                <option value="50">매우 어려움</option>
+            </select>
+            <button id="soundBtn" class="btn">🔊 소리 켜기/끄기</button>
+        </div>
+
+        <!-- 모바일 컨트롤 -->
+        <div class="mobile-controls">
+            <button class="control-btn" data-direction="up">⬆️</button>
+            <div class="control-row">
+                <button class="control-btn" data-direction="left">⬅️</button>
+                <button class="control-btn" data-direction="down">⬇️</button>
+                <button class="control-btn" data-direction="right">➡️</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>💡 팁: 점수가 높아질수록 속도가 빨라집니다!</p>
+        </footer>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

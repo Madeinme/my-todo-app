@@ -1,0 +1,218 @@
+/* 기본 여백 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 페이지 전체: 보라색 그라데이션 배경 + 카드를 화면 중앙에 배치 */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* 흰색 카드 (최대 너비 500px) */
+.card {
+    width: 100%;
+    max-width: 500px;
+    padding: 36px 32px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* 제목 */
+.title {
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+}
+
+/* 입력창 + 버튼을 한 줄로 배치 */
+.todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+/* 입력창 */
+.todo-input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e2e4f0;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+/* 입력창에 포커스가 가면 테두리를 테마 색으로 */
+.todo-input:focus {
+    border-color: #667eea;
+}
+
+/* 추가 버튼 */
+.add-btn {
+    padding: 0 22px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+.add-btn:hover {
+    opacity: 0.9;
+}
+
+/* 누를 때 살짝 작아지는 효과 */
+.add-btn:active {
+    transform: scale(0.96);
+}
+
+/* 할 일 개수 표시 */
+.todo-count {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #888;
+}
+
+.todo-count strong {
+    color: #667eea;
+}
+
+/* 할 일 목록 */
+.todo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 할 일 항목 하나 (나중에 JS로 추가될 예정) */
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #f6f7fc;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* 항목 안의 글자 영역 */
+.todo-item .todo-text {
+    flex: 1;
+}
+
+/* 완료 체크박스 (테마 색 적용) */
+.todo-check {
+    width: 18px;
+    height: 18px;
+    accent-color: #667eea;
+    cursor: pointer;
+}
+
+/* 긴 글자도 줄바꿈되도록 */
+.todo-item .todo-text {
+    word-break: break-all;
+}
+
+/* 삭제 버튼 */
+.delete-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #e5484d;
+    background: transparent;
+    border: 1px solid #f3c2c4;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* 마우스를 올리면 빨간 배경 */
+.delete-btn:hover {
+    color: #ffffff;
+    background: #e5484d;
+}
+
+/* 완료된 항목: 취소선 + 흐린 색 */
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+/* 안내 문구 (보이고 숨기는 것은 JS가 hidden 속성으로 처리) */
+.empty-message {
+    text-align: center;
+    color: #999;
+    font-size: 15px;
+    padding: 20px 0;
+}
+
+/* 필터 버튼 묶음 */
+.filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+/* 필터 버튼 하나 */
+.filter-btn {
+    flex: 1;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #667eea;
+    background: #ffffff;
+    border: 2px solid #e2e4f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: #667eea;
+}
+
+/* 현재 선택된 필터: 테마 색으로 채워서 강조 */
+.filter-btn.active {
+    color: #ffffff;
+    font-weight: bold;
+    background: #667eea;
+    border-color: #667eea;
+}
+
+/* 완료된 항목 삭제 버튼 (카드 맨 아래, 전체 너비) */
+.clear-done-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #e5484d;
+    background: transparent;
+    border: 1px solid #f3c2c4;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.clear-done-btn:hover:not(:disabled) {
+    color: #ffffff;
+    background: #e5484d;
+}
+
+/* 완료된 항목이 없을 때는 흐리게 */
+.clear-done-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}

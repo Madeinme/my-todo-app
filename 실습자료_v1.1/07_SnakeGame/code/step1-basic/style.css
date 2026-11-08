@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #00ff88;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.score, .high-score {
+    color: #fff;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.score span {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+.high-score span {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+#gameCanvas {
+    border: 3px solid #00ff88;
+    border-radius: 10px;
+    background: #0a0a0a;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#startBtn {
+    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    color: #1a1a2e;
+}
+
+#startBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+#restartBtn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+    color: #fff;
+}
+
+#restartBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+.hidden {
+    display: none;
+}
+
+#gameOverMessage {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 2px solid #ff6b6b;
+}
+
+#gameOverMessage h2 {
+    color: #ff6b6b;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#gameOverMessage p {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+#gameOverMessage #finalScore {
+    color: #ffd700;
+    font-weight: bold;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝 나의 할 일 목록</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="app">
+        <h1>📝 나의 할 일 목록</h1>
+
+        <div class="input-container">
+            <input type="text" id="todoInput"
+                   placeholder="할 일을 입력하세요">
+            <button id="addBtn">추가</button>
+        </div>
+
+        <!-- 할 일 개수 표시 -->
+        <p id="todoCount">전체: 0개, 완료: 0개</p>
+
+        <!-- 필터 버튼 -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">전체</button>
+            <button class="filter-btn" data-filter="active">진행중</button>
+            <button class="filter-btn" data-filter="completed">완료</button>
+        </div>
+
+        <ul id="todoList">
+            <!-- 할 일 항목들이 여기에 동적으로 추가됨 -->
+        </ul>
+
+        <!-- 완료된 항목 삭제 버튼 -->
+        <button id="clearCompleted" class="clear-btn">완료된 항목 삭제</button>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

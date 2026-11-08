@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 한글이 깨지지 않도록 UTF-8 인코딩 사용 -->
+    <meta charset="UTF-8">
+    <!-- 모바일 화면 너비에 맞춰 표시 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 브라우저 탭에 표시되는 제목 -->
+    <title>환율 변환기</title>
+    <!-- 디자인을 담당하는 CSS 파일 연결 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 화면 가운데에 놓이는 환율 변환기 카드 -->
+    <main class="card">
+        <h1 class="title">환율 변환기</h1>
+
+        <!-- 금액 입력창 (숫자만 입력 가능) -->
+        <div class="field">
+            <label for="amount">금액</label>
+            <input id="amount" type="number" min="0" step="any" inputmode="decimal" placeholder="금액을 입력하세요">
+        </div>
+
+        <!-- 바꿀 통화 선택 -->
+        <div class="field">
+            <label for="from">From</label>
+            <select id="from">
+                <option value="USD" selected>USD</option>
+                <option value="EUR">EUR</option>
+                <option value="KRW">KRW</option>
+                <option value="JPY">JPY</option>
+            </select>
+        </div>
+
+        <!-- From과 To 통화를 서로 바꾸는 버튼 -->
+        <button id="swap-btn" class="btn-swap" type="button">⇅ 통화 교환</button>
+
+        <!-- 바뀔 통화 선택 -->
+        <div class="field">
+            <label for="to">To</label>
+            <select id="to">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="KRW" selected>KRW</option>
+                <option value="JPY">JPY</option>
+            </select>
+        </div>
+
+        <!-- 변환 버튼 -->
+        <button id="convert" class="btn" type="button">변환</button>
+
+        <!-- 결과 표시 영역. aria-live 덕분에 내용이 바뀌면 스크린리더가 읽어 줌 -->
+        <p id="result" class="result" aria-live="polite"></p>
+
+        <!-- 최근 변환 기록 (최대 5개). 기록이 없으면 JS가 hidden으로 숨김 -->
+        <section id="history-section" class="history" hidden>
+            <!-- 제목과 삭제 버튼을 한 줄에 배치 -->
+            <div class="history-header">
+                <h2 class="history-title">최근 변환 기록</h2>
+                <div class="history-actions">
+                    <!-- 체크한 기록만 삭제. 체크한 것이 없으면 JS가 비활성화 -->
+                    <button id="delete-selected" class="btn-small" type="button" disabled>선택 삭제</button>
+                    <!-- 기록 전부 삭제 -->
+                    <button id="delete-all" class="btn-small btn-danger" type="button">전체 삭제</button>
+                </div>
+            </div>
+            <ul id="history" class="history-list"></ul>
+        </section>
+    </main>
+
+    <!-- 동작을 담당하는 파일. 페이지 내용을 다 읽은 뒤 불러오도록 body 맨 끝에 둠 -->
+    <script src="main.js"></script>
+</body>
+</html>

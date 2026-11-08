@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 기초 실습</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="app">
+        <h1>웹 기초 인터랙션 실습</h1>
+
+        <!-- 섹션 1: 카운터 -->
+        <section class="card">
+            <h2>📊 카운터</h2>
+            <div class="counter-display">
+                <span id="count">0</span>
+            </div>
+            <div class="button-group">
+                <button id="decreaseBtn">➖ 감소</button>
+                <button id="increaseBtn">➕ 증가</button>
+                <button id="resetBtn">🔄 리셋</button>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 텍스트 입력 -->
+        <section class="card">
+            <h2>✍️ 인사말 생성기</h2>
+            <input type="text" id="nameInput" placeholder="이름을 입력하세요">
+            <button id="greetBtn">인사하기</button>
+            <p id="greeting" class="result"></p>
+        </section>
+
+        <!-- 섹션 3: 색상 변경 -->
+        <section class="card">
+            <h2>🎨 배경색 변경</h2>
+            <div class="color-buttons">
+                <button class="color-btn" data-color="#e74c3c" style="background: #e74c3c;">빨강</button>
+                <button class="color-btn" data-color="#3498db" style="background: #3498db;">파랑</button>
+                <button class="color-btn" data-color="#2ecc71" style="background: #2ecc71;">초록</button>
+                <button class="color-btn" data-color="#f39c12" style="background: #f39c12;">노랑</button>
+                <button id="randomColorBtn">🎲 랜덤</button>
+            </div>
+            <div id="colorBox" class="color-box">
+                <p>배경색이 변경됩니다</p>
+            </div>
+        </section>
+
+        <!-- 섹션 4: 리스트 관리 -->
+        <section class="card">
+            <h2>📝 간단한 목록</h2>
+            <div class="input-group">
+                <input type="text" id="itemInput" placeholder="항목을 입력하세요">
+                <button id="addItemBtn">추가</button>
+            </div>
+            <ul id="itemList" class="item-list"></ul>
+            <button id="clearListBtn" class="clear-btn">전체 삭제</button>
+        </section>
+
+        <!-- 섹션 5: 마우스 이벤트 -->
+        <section class="card">
+            <h2>🖱️ 마우스 이벤트</h2>
+            <div id="mouseBox" class="mouse-box">
+                <p>마우스를 올려보세요!</p>
+                <p id="mouseStatus">대기 중...</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
