@@ -15,7 +15,7 @@ HTML, CSS, 순수 JavaScript만 사용했고, 빌드 과정이나 설치할 패�
 | [`counter/`](counter/) | +, −, 초기화 버튼이 있는 카운터 |
 | [`to-do/`](to-do/) | 할 일 목록 (추가·완료·삭제, 전체/진행 중/완료 필터, 브라우저에 자동 저장) |
 | [`fxconverter/`](fxconverter/) | 환율 계산기 (USD·EUR·KRW·JPY, 입력하는 즉시 변환, 최근 변환 기록 5개 저장) |
-| [`snakegame/`](snakegame/) | 스네이크 게임 (난이도 선택, 50점마다 레벨 업, 일시정지, 최고 점수 저장) |
+| [`snakegame/`](snakegame/) | 뱀게임 (난이도 선택, 50점마다 레벨 업, 일시정지, 최고 점수 저장) |
 | [`my-todo-app/`](my-todo-app/) | 실습용 폴더 |
 
 `실습자료_v1.1/` 폴더에는 강의 단계별 실습 자료가 들어 있습니다.
